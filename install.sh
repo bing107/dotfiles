@@ -1,6 +1,6 @@
 #!/bin/bash
 # Dotfiles bootstrap script
-# Usage: git clone git@github.com:bing107/dotfiles.git ~/.dotfiles && ~/.dotfiles/install.sh
+# Usage: git clone git@github.com:bing107/dotfiles.git ~/dotfiles && ~/dotfiles/install.sh
 set -e
 
 DOTFILES="$(cd "$(dirname "$0")" && pwd)"

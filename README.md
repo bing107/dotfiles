@@ -55,7 +55,7 @@ Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) with custo
 ## Repository Structure
 
 ```
-~/.dotfiles/
+dotfiles/
 ├── Brewfile                          # Homebrew packages
 ├── install.sh                        # Bootstrap script
 ├── zsh/
@@ -68,7 +68,7 @@ Based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) with custo
         └── lua/custom/plugins/
 ```
 
-Each top-level directory (`zsh/`, `tmux/`, `nvim/`) is a stow package. Running `stow zsh` from `~/.dotfiles` creates a symlink from `~/.zshrc` pointing to `~/.dotfiles/zsh/.zshrc`, and so on.
+Each top-level directory (`zsh/`, `tmux/`, `nvim/`) is a stow package. Running `stow zsh` from the repo root creates a symlink from `~/.zshrc` pointing to `<repo>/zsh/.zshrc`, and so on.
 
 ## Machine-Specific Config
 
@@ -93,18 +93,18 @@ Both are sourced automatically by `.zshrc` if they exist.
 Edit the `Brewfile` and run:
 
 ```bash
-brew bundle --file=~/.dotfiles/Brewfile
+brew bundle --file=<path-to-repo>/Brewfile
 ```
 
 ## Managing Dotfiles
 
 ```bash
 # Link a package
-cd ~/.dotfiles && stow zsh
+cd <path-to-repo> && stow zsh
 
 # Unlink a package
-cd ~/.dotfiles && stow -D zsh
+cd <path-to-repo> && stow -D zsh
 
 # Re-link after changes (unlink + link)
-cd ~/.dotfiles && stow -R zsh
+cd <path-to-repo> && stow -R zsh
 ```
