@@ -3,7 +3,7 @@
 # Usage: git clone git@github.com:bing107/dotfiles.git ~/.dotfiles && ~/.dotfiles/install.sh
 set -e
 
-DOTFILES="$HOME/.dotfiles"
+DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 
 echo "==> Starting dotfiles setup..."
 
