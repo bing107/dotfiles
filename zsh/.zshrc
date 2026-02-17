@@ -24,15 +24,17 @@ command -v kubectl &>/dev/null && source <(kubectl completion zsh)
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
 # Zsh plugins (after SDKMAN to avoid function-not-found)
-source "$(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
-source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+if command -v brew &>/dev/null; then
+  source "$(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh" 2>/dev/null
+  source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" 2>/dev/null
+  source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" 2>/dev/null
+fi
 
 # Zoxide
-eval "$(zoxide init zsh)"
+command -v zoxide &>/dev/null && eval "$(zoxide init zsh)"
 
 # PATH
-export PATH="$HOME/.local/bin:/opt/homebrew/opt/postgresql@16/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Hide user@host in agnoster prompt
 export DEFAULT_USER=$USER
