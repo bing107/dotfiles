@@ -42,6 +42,10 @@ if [ ! -d "$HOME/.config/nvim" ]; then
   echo "==> Cloning kickstart.nvim..."
   git clone https://github.com/nvim-lua/kickstart.nvim.git "$HOME/.config/nvim"
 fi
+# Remove files that stow will manage so it can link over them
+for f in $(cd "$DOTFILES/nvim" && find . -type f); do
+  rm -f "$HOME/$f"
+done
 stow --restow --target="$HOME" nvim
 
 # 6. TPM (Tmux Plugin Manager)
