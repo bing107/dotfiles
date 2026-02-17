@@ -56,6 +56,15 @@ else
   echo "==> TPM already installed"
 fi
 
+# 7. Catppuccin tmux theme (manual — TPM has a naming conflict with this plugin)
+if [ ! -d "$HOME/.config/tmux/plugins/catppuccin" ]; then
+  echo "==> Installing Catppuccin tmux theme..."
+  mkdir -p "$HOME/.config/tmux/plugins/catppuccin"
+  git clone https://github.com/catppuccin/tmux.git "$HOME/.config/tmux/plugins/catppuccin/tmux"
+else
+  echo "==> Catppuccin tmux theme already installed"
+fi
+
 # 7. NVM
 if [ ! -d "$HOME/.nvm" ]; then
   echo "==> Installing NVM..."
@@ -83,6 +92,6 @@ fi
 echo ""
 echo "==> Done! Next steps:"
 echo "  1. Open a new terminal — tmux will auto-start"
-echo "  2. In tmux, press C-a I to install tmux plugins"
+echo "  2. In tmux, press C-a I to install remaining tmux plugins (battery, etc.)"
 echo "  3. Edit ~/.env.secrets to add your API keys"
 echo "  4. (Optional) Create ~/.zshrc.local for machine-specific config"
