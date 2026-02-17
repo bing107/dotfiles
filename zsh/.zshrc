@@ -24,9 +24,9 @@ command -v kubectl &>/dev/null && source <(kubectl completion zsh)
 [[ -f ~/.fzf.zsh ]] && source ~/.fzf.zsh
 
 # Zsh plugins (after SDKMAN to avoid function-not-found)
-source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # Zoxide
 eval "$(zoxide init zsh)"
