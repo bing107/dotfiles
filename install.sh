@@ -49,9 +49,10 @@ done
 stow --restow --target="$HOME" nvim
 
 # 6. TPM (Tmux Plugin Manager)
-if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+if [ ! -d "$HOME/.config/tmux/plugins/tpm" ]; then
   echo "==> Installing TPM..."
-  git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+  mkdir -p "$HOME/.config/tmux/plugins"
+  git clone https://github.com/tmux-plugins/tpm "$HOME/.config/tmux/plugins/tpm"
 else
   echo "==> TPM already installed"
 fi
