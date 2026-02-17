@@ -35,14 +35,14 @@ echo "==> Linking dotfiles with stow..."
 cd "$DOTFILES"
 # Remove any existing .zshrc that would conflict with stow
 [ -f "$HOME/.zshrc" ] && rm -f "$HOME/.zshrc"
-stow zsh tmux
+stow --target="$HOME" zsh tmux
 
 # 5. Kickstart.nvim
 if [ ! -d "$HOME/.config/nvim" ]; then
   echo "==> Cloning kickstart.nvim..."
   git clone https://github.com/nvim-lua/kickstart.nvim.git "$HOME/.config/nvim"
 fi
-stow nvim
+stow --target="$HOME" nvim
 
 # 6. TPM (Tmux Plugin Manager)
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
