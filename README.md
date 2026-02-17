@@ -5,11 +5,11 @@ Personal macOS development environment managed with [GNU Stow](https://www.gnu.o
 ## Quick Start
 
 ```bash
-git clone git@github.com:bing107/dotfiles.git ~/.dotfiles
-~/.dotfiles/install.sh
+git clone git@github.com:bing107/dotfiles.git ~/dotfiles
+~/dotfiles/install.sh
 ```
 
-The bootstrap script handles everything: Homebrew, packages, oh-my-zsh, symlinks, Neovim, tmux plugins, NVM, and fzf. After it finishes, open a new terminal and you're ready to go.
+You can clone the repo to any path — the install script detects its own location automatically. After it finishes, open a new terminal and you're ready to go.
 
 ## What's Included
 
